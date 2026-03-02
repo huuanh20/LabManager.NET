@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="LabManager.Application/LabManager.Application.csproj" />
+  <Project Path="LabManager.Domain/LabManager.Domain.csproj" />
+  <Project Path="LabManager.Infrastructure/LabManager.Infrastructure.csproj" />
+  <Project Path="LabManager.WebApi/LabManager.WebApi.csproj" />
+</Solution>
