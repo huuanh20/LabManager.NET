@@ -1,0 +1,46 @@
+<UserControl x:Class="LabManager.Desktop.Views.PatientView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="600" d:DesignWidth="800">
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        
+        <StackPanel Grid.Row="0" Margin="0,0,0,20">
+            <TextBlock Text="Quản lý Bệnh nhân" FontSize="28" FontWeight="Bold" Margin="0,0,0,15"/>
+            
+            <WrapPanel>
+                <StackPanel Margin="0,0,15,0">
+                    <TextBlock Text="Họ tên"/>
+                    <TextBox Width="200" Text="{Binding NewFullName}" Padding="5"/>
+                </StackPanel>
+                <StackPanel Margin="0,0,15,0">
+                    <TextBlock Text="Email"/>
+                    <TextBox Width="200" Text="{Binding NewEmail}" Padding="5"/>
+                </StackPanel>
+                <Button Content="Thêm mới" Command="{Binding CreatePatientCommand}" 
+                        Padding="15,5" Background="#198754" Foreground="White" BorderThickness="0"
+                        VerticalAlignment="Bottom"/>
+                
+                <Button Content="Tải lại Data" Command="{Binding LoadPatientsCommand}" 
+                        Padding="15,5" Background="#6c757d" Foreground="White" BorderThickness="0"
+                        VerticalAlignment="Bottom" Margin="15,0,0,0"/>
+            </WrapPanel>
+        </StackPanel>
+        
+        <DataGrid Grid.Row="1" ItemsSource="{Binding Patients}" AutoGenerateColumns="False" 
+                  IsReadOnly="True" GridLinesVisibility="Horizontal" AlternatingRowBackground="#f8f9fa">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Họ và tên" Binding="{Binding FullName}" Width="2*"/>
+                <DataGridTextColumn Header="Email" Binding="{Binding Email}" Width="2*"/>
+                <DataGridTextColumn Header="Số điện thoại" Binding="{Binding PhoneNumber}" Width="1.5*"/>
+                <DataGridTextColumn Header="Ngày sinh" Binding="{Binding DateOfBirth, StringFormat=dd/MM/yyyy}" Width="1.5*"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</UserControl>
