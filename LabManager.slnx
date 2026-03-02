@@ -1,0 +1,9 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/LabManager.Application/LabManager.Application.csproj" />
+    <Project Path="src/LabManager.Domain/LabManager.Domain.csproj" />
+    <Project Path="src/LabManager.Infrastructure/LabManager.Infrastructure.csproj" />
+    <Project Path="src/LabManager.WebApi/LabManager.WebApi.csproj" />
+    <Project Path="src/LabManager.WPF/LabManager.WPF.csproj" />
+  </Folder>
+</Solution>
